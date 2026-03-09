@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> 🎀 Drill #1 🎀 </title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: rgb(250, 218, 235);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background: rgb(255, 248, 249);
+    padding: 30px;
+    width: 340px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgb(251, 174, 224);
+}
+
+h2{
+    margin-bottom: 20px;
+    color:#333;
+}
+
+.label{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+input{
+    width: 90%;
+    padding: 10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+button{
+    margin-top:15px;
+    width: 95%;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:rgb(251, 174, 224);
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2> Electricity Consumption Classifier </h2>
+
+<input type="number" id="kilowatt" placeholder=" Input kilowatt per hour 🐰 ">
+
+<button onclick="evaluateKilowatt()"> Consumption Classification </button>
+
+</div>
+
+<script>
+
+function evaluateKilowatt(){
+
+var kilowatt = document.getElementById("kilowatt").value;
+
+if(kilowatt === ""){
+    alert("Please enter a kilowatt value. 😓");
+    return;
+}
+
+kilowatt = Number(kilowatt);
+
+alert(category + ":" + description);
+
+}
+
+var category = "";
+var description = "";
+
+if(kilowatt >= 0 && kilowatt <= 100){
+    category = " Lifeline Consumer";
+    description = " Discounted electricity rates. 😮 ";
+}
+
+else if(kilowatt >= 101 && kilowatt <= 200){
+    category = " Low Consumption";
+    description = " Normal residential rate. 😌 ";
+}
+
+else if(kilowatt >= 201 && kilowatt <= 300){
+    category = " Average Consumption";
+    description = " Typical electricity usage. 😊 ";
+}
+
+else if(kilowatt >= 301 && kilowatt <= 500){
+    category = " High Consumption";
+    description = " Higher electricity usage. 😅";
+}
+
+else{
+    category = " Very High Consumption";
+    description = " Heavy electricity users. 😥 ";
+}
+
+</script>
+
+</body>
+</html>
